@@ -41,7 +41,7 @@ class EvalAsRuby:
         """ % script
 
         output, error = proc.communicate(ruby_input.encode('utf-8'))
-        output = output.strip()
+        output = '\n\n' + output.strip()
 
         if proc.poll():
             output += "\n" + error
